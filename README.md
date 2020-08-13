@@ -12,7 +12,7 @@ curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/insta
 
 ## What's included
 - Docker image for prod build
-- [Reflex](github.com/cespare/reflex)-based live restart of lint/vet/test on a source file change
+- [Reflex](https://github.com/cespare/reflex)-based live restart of lint/vet/test on a source file change
 - No Go code except for `cmd/service.go` main package boilerplate
 
 ## Get started
