@@ -1,3 +1,5 @@
+all: build
+
 .PHONY: run
 run:
 	reflex -s -r '\.go$' script/run.sh
