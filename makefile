@@ -2,7 +2,7 @@ all: build
 
 .PHONY: run
 run:
-	reflex -s -r '\.go$' script/run.sh
+	reflex -s -r '\.go$$' script/run.sh
 
 .PHONY: ci-test
 ci-test:
