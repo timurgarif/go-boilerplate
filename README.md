@@ -28,6 +28,7 @@ git clone https://github.com/timurgarif/go-boilerplate $NEW_PROJECT_NAME \
 && cd $NEW_PROJECT_NAME \
 && echo "# $NEW_PROJECT_NAME" > README.md \
 && sed -i 's%example.com/myservice%'"$NEW_MODULE_NAME"'%g' makefile \
+&& sed -i 's%go.boilerplate%'"$NEW_PROJECT_NAME"'%g' cmd/service.go \
 && rm -rf .git \
 && git init \
 && go mod init $NEW_MODULE_NAME \
