@@ -16,14 +16,14 @@ RUN adduser \
     --shell "/sbin/nologin" \    
     --no-create-home \    
     --uid "${UID}" \    
-    "${USER}"WORKDIR $GOPATH/src/mypackage/myapp/
+    "${USER}"
 WORKDIR /go/src    
 COPY . .
 # Fetch dependencies
 RUN go mod download
 RUN go mod verify
 # Build the binary
-RUN GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o /go/bin/service cmd/service.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags='-w -s -extldflags "-static"' -o /go/bin/service cmd/service.go
 
 FROM scratch as prod
 # Copy from builder.
